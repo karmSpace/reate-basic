@@ -1,14 +1,12 @@
 import React from 'react';
 
-export default function Profile() {
+export default function Profile({image, name, title, isNew}) {
     return (
-        <div>
-            <img 
-            alt='avatar'
-            src='https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
-            ></img>
-            <h1>James kimm</h1>
-            <p>프론트엔드 개발자</p>
+        <div className='profile'>
+            <img className='photo' alt='avatar' src={image} />
+            {isNew && <span className='new'>New</span> }
+            <h1>{name}</h1>
+            <p>{title}</p>
         </div>
     );
 }
